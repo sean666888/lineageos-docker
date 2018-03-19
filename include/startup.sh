@@ -12,12 +12,6 @@ if [ ! -f $CCACHE_DIR/ccache.conf ]; then
 	echo "Initializing ccache in $CCACHE_DIR..."
 	ccache -M 50G
 fi
-# Installing 'repo'
-mkdir ~/bin
-echo "PATH=~/bin:$PATH" >> ~/.bashrc
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-chmod a+x ~/bin/repo
-. ~/.bashrc
 export USE_CCACHE=0
 export CCACHE_COMPRESS=1
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
